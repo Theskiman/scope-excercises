@@ -12,11 +12,29 @@
 
 // Scope part two
 
-const conjunction = function (firstWord, secondWord) {
-    const conjoinedWord = `${firstWord} ${secondWord}`
-    console.log(conjoinedWord)
-}
+// const conjunction = function (firstWord, secondWord) {
+//     const conjoinedWord = `${firstWord} ${secondWord}`
+//     console.log(conjoinedWord)
+// }
 
-conjunction("Master", "Card")
+// conjunction("Master", "Card")
 
 // Scope part three
+let HTMLRepresentation = `<h1>The Mod Squad</h1>`
+{
+    const ModSquad = {
+        "members": ["Pete Cochran", "Linc Hayes", "Julie Barnes", "Capt. Adam Greer", "Chief Barney Metcalf"],
+        "series": {
+            start: "1968",
+            end: "1973"
+        }
+    }
+
+    
+
+    ModSquad.members.forEach(member => {
+         HTMLRepresentation += `<div>${member}</div>`
+    })
+}
+
+document.querySelector(".show-info").innerHTML = HTMLRepresentation
